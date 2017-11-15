@@ -15,7 +15,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        Coordenada c = new Coordenada(-200, 5);
+        try {
+            Coordenada c = new Coordenada(-200, 0);
+        } catch(Exception e) {
+            System.out.println("Error: " + e);
+        }
         /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Ventana().setVisible(true);
