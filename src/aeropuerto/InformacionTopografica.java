@@ -19,10 +19,7 @@ public class InformacionTopografica {
     public static Coordenada getPosicionAeropuerto(String nombreCiudad) throws Exception {
         Map<String, Coordenada> aeropuertos = getPosicionesAeropuertos();
         
-        System.out.println(aeropuertos.get(nombreCiudad));
-        // Falta coger el valor de Coordenada y devolverlo.
-        
-        return new Coordenada(0, 0);
+        return aeropuertos.get(nombreCiudad);
     }
     
 }
