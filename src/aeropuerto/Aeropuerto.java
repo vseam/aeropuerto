@@ -1,20 +1,51 @@
 package aeropuerto;
 
+import java.util.Date;
+
 public class Aeropuerto {
     private String         nombreCiudad;
     private TipoAeropuerto tipoAeropuerto;
     private int            numeroPistas;
-    private String         fechaConstruccion; // Tipo fecha?
+    private Date           fechaConstruccion;
     private String[]       ciudadesDestino;
     private Coordenada     coordenadas;
     
-    public Aeropuerto(String nombreCiudad, TipoAeropuerto tipoAeropuerto, int numeroPistas, String fechaConstruccion, String[] ciudadesDestino, Coordenada coordenadas) {
-        this.nombreCiudad      = nombreCiudad;
-        this.tipoAeropuerto    = tipoAeropuerto;
-        this.numeroPistas      = numeroPistas;
-        this.fechaConstruccion = fechaConstruccion;
-        this.ciudadesDestino   = ciudadesDestino;
-        this.coordenadas       = coordenadas;
+    public Aeropuerto(String nombreCiudad, TipoAeropuerto tipoAeropuerto, int numeroPistas, Date fechaConstruccion, String[] ciudadesDestino, Coordenada coordenadas) throws Exception {
+        if(!this.nombreCiudad.isEmpty()) {
+            this.nombreCiudad = nombreCiudad;
+        } else {
+            throw new Exception();
+        }
+        
+        if(this.tipoAeropuerto != null) {
+            this.tipoAeropuerto = tipoAeropuerto;
+        } else {
+            throw new Exception();
+        }
+        
+        if(this.numeroPistas > 0) {
+            this.numeroPistas = numeroPistas;
+        } else {
+            throw new Exception();
+        }
+        
+        if(this.fechaConstruccion != null && this.fechaConstruccion.before(new Date())) {
+            this.fechaConstruccion = fechaConstruccion;
+        } else {
+            throw new Exception();
+        }
+        
+        if(this.ciudadesDestino.length > 0) {
+            this.ciudadesDestino = ciudadesDestino;
+        } else {
+            throw new Exception();
+        }
+        
+        if(this.coordenadas != null) {
+            this.coordenadas = coordenadas;
+        } else {
+            throw new Exception();
+        }
     }
     
     private int precioPorDestino() throws Exception {
