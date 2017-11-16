@@ -17,4 +17,18 @@ public class Coordenada {
             throw new Exception();
         }
     }
+    
+    // Setters
+    public double getLongitud() {
+        return this.longitud;
+    }
+    
+    public double getLatitud() {
+        return this.latitud;
+    }
+    
+    // Método
+    public String toString() {
+        return this.longitud + ", " + this.latitud;
+    }
 }

@@ -1,14 +1,14 @@
 package aeropuerto;
 
 public class Aeropuerto {
-    private String   nombreCiudad;
-    private String   tipoAeropuerto; // Usar el enum.
-    private int      numeroPistas;
-    private String   fechaConstruccion; // Tipo fecha?
-    private String[] ciudadesDestino;
-    private String   coordenadas; // Objeto coordenada?
+    private String     nombreCiudad;
+    private String     tipoAeropuerto; // Usar el enum?
+    private int        numeroPistas;
+    private String     fechaConstruccion; // Tipo fecha?
+    private String[]   ciudadesDestino;
+    private Coordenada coordenadas;
     
-    public Aeropuerto(String nombreCiudad, String tipoAeropuerto, int numeroPistas, String fechaConstruccion, String[] ciudadesDestino, String coordenadas) {
+    public Aeropuerto(String nombreCiudad, String tipoAeropuerto, int numeroPistas, String fechaConstruccion, String[] ciudadesDestino, Coordenada coordenadas) {
         this.nombreCiudad      = nombreCiudad;
         this.tipoAeropuerto    = tipoAeropuerto;
         this.numeroPistas      = numeroPistas;
