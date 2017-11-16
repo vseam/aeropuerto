@@ -52,13 +52,23 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabel2.setText("Tipo de Aeropuerto:");
 
+        jTextField2.setEditable(false);
+
         jLabel3.setText("Nº de Pistas:");
+
+        jTextField3.setEditable(false);
 
         jLabel4.setText("Fecha de creación:");
 
+        jTextField4.setEditable(false);
+
         jLabel5.setText("Tasas:");
 
+        jTextField5.setEditable(false);
+
         jLabel6.setText("Coordenadas (Longitud; Latitud):");
+
+        jTextField6.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

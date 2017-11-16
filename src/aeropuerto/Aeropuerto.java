@@ -1,21 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aeropuerto;
 
-/**
- *
- * @author vlazaro
- */
 public class Aeropuerto {
     private String   nombreCiudad;
-    private String   tipoAeropuerto;
+    private String   tipoAeropuerto; // Usar el enum.
     private int      numeroPistas;
-    private String   fechaConstruccion;
+    private String   fechaConstruccion; // Tipo fecha?
     private String[] ciudadesDestino;
-    private String   coordenadas;
+    private String   coordenadas; // Objeto coordenada?
     
     public Aeropuerto(String nombreCiudad, String tipoAeropuerto, int numeroPistas, String fechaConstruccion, String[] ciudadesDestino, String coordenadas) {
         this.nombreCiudad      = nombreCiudad;
@@ -26,19 +17,26 @@ public class Aeropuerto {
         this.coordenadas       = coordenadas;
     }
     
-    private int precioPorDestino() {
+    private int precioPorDestino() throws Exception {
         int tasas = 0;
         
-        if(this.tipoAeropuerto == "National") {
-            tasas = 8;
-        } else if(this.tipoAeropuerto == "International") {
-            tasas = 17;
+        if(this.tipoAeropuerto == null) {
+            throw new Exception();
+        } else switch (this.tipoAeropuerto) {
+            case "National":
+                tasas = 8;
+                break;
+            case "International":
+                tasas = 17;
+                break;
+            default:
+                throw new Exception();
         }
         
         return tasas;
     }
     
-    public int getTasas() {
+    public int getTasas() throws Exception {
         return this.ciudadesDestino.length * precioPorDestino();
     }
 }
