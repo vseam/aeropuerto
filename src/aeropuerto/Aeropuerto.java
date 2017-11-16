@@ -1,14 +1,14 @@
 package aeropuerto;
 
 public class Aeropuerto {
-    private String     nombreCiudad;
-    private String     tipoAeropuerto; // Usar el enum?
-    private int        numeroPistas;
-    private String     fechaConstruccion; // Tipo fecha?
-    private String[]   ciudadesDestino;
-    private Coordenada coordenadas;
+    private String         nombreCiudad;
+    private TipoAeropuerto tipoAeropuerto;
+    private int            numeroPistas;
+    private String         fechaConstruccion; // Tipo fecha?
+    private String[]       ciudadesDestino;
+    private Coordenada     coordenadas;
     
-    public Aeropuerto(String nombreCiudad, String tipoAeropuerto, int numeroPistas, String fechaConstruccion, String[] ciudadesDestino, Coordenada coordenadas) {
+    public Aeropuerto(String nombreCiudad, TipoAeropuerto tipoAeropuerto, int numeroPistas, String fechaConstruccion, String[] ciudadesDestino, Coordenada coordenadas) {
         this.nombreCiudad      = nombreCiudad;
         this.tipoAeropuerto    = tipoAeropuerto;
         this.numeroPistas      = numeroPistas;
@@ -20,13 +20,13 @@ public class Aeropuerto {
     private int precioPorDestino() throws Exception {
         int tasas = 0;
         
-        if(this.tipoAeropuerto == null) {
+        if(null == this.tipoAeropuerto) {
             throw new Exception();
         } else switch (this.tipoAeropuerto) {
-            case "National":
+            case NATIONAL:
                 tasas = 8;
                 break;
-            case "International":
+            case INTERNATIONAL:
                 tasas = 17;
                 break;
             default:
