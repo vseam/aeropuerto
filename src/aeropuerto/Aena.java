@@ -39,6 +39,8 @@ public class Aena {
     public static Aeropuerto getAeropuerto(String nombreCiudad) throws Exception {
         Map<String, Aeropuerto> aeropuertos = getAeropuertos();
         
-        return aeropuertos.get(nombreCiudad);
+        String nCiudad = nombreCiudad.substring(0, 1).toUpperCase() + nombreCiudad.substring(1);
+        
+        return aeropuertos.get(nCiudad);
     }
 }

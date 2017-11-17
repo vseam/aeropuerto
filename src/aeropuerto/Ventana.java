@@ -145,7 +145,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         try {
-            Aeropuerto aero = Aena.getAeropuerto(nombreCiudad.getText());
+            Aeropuerto aero = Aena.getAeropuerto(nombreCiudad.getText().toLowerCase());
             
             String tipoAero = aero.getTipoAeropuerto().toString().toLowerCase();
             
