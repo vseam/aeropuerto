@@ -147,8 +147,9 @@ public class Ventana extends javax.swing.JFrame {
         try {
             Aeropuerto aero = Aena.getAeropuerto(nombreCiudad.getText());
             
-            String tAero = aero.getTipoAeropuerto().toString().toLowerCase();
-            tipoAeropuerto.setText(tAero.substring(0, 1).toUpperCase() + tAero.substring(1));
+            String tipoAero = aero.getTipoAeropuerto().toString().toLowerCase();
+            
+            tipoAeropuerto.setText(tipoAero.substring(0, 1).toUpperCase() + tipoAero.substring(1));
             numeroPistas.setText(String.valueOf(aero.getNumeroPistas()));
             fechaCreacion.setText(new SimpleDateFormat("dd/MM/yyyy").format(aero.getFechaConstruccion()));
             tasasAeropuerto.setText(String.valueOf(aero.getTasas()));
