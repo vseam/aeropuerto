@@ -14,37 +14,37 @@ public class Aeropuerto {
         if(!nombreCiudad.isEmpty()) {
             this.nombreCiudad = nombreCiudad;
         } else {
-            throw new Exception();
+            throw new Exception("El nombre de la ciudad no ha sido introducido.");
         }
         
         if(tipoAeropuerto != null) {
             this.tipoAeropuerto = tipoAeropuerto;
         } else {
-            throw new Exception();
+            throw new Exception("El tipo de aeropuerto no ha sido introducido.");
         }
         
         if(numeroPistas > 0) {
             this.numeroPistas = numeroPistas;
         } else {
-            throw new Exception();
+            throw new Exception("El número de pistas no puede ser inferior de 0. (" + numeroPistas + ")");
         }
         
         if(fechaConstruccion != null && fechaConstruccion.before(new Date())) {
             this.fechaConstruccion = fechaConstruccion;
         } else {
-            throw new Exception();
+            throw new Exception("La fecha introducida no es válida.");
         }
         
         if(ciudadesDestino.length > 0) {
             this.ciudadesDestino = ciudadesDestino;
         } else {
-            throw new Exception();
+            throw new Exception("Debe haber como mínimo una ciudad de destino. (" + ciudadesDestino.length + ")");
         }
         
         if(coordenadas != null) {
             this.coordenadas = coordenadas;
         } else {
-            throw new Exception();
+            throw new Exception("Las coordenadas no han sido introducidas.");
         }
     }
     
@@ -74,7 +74,7 @@ public class Aeropuerto {
         int tasas = 0;
         
         if(null == this.tipoAeropuerto) {
-            throw new Exception();
+            throw new Exception("El tipo de aeropuerto no ha sido introducido.");
         } else switch (this.tipoAeropuerto) {
             case NATIONAL:
                 tasas = 8;
@@ -83,7 +83,7 @@ public class Aeropuerto {
                 tasas = 17;
                 break;
             default:
-                throw new Exception();
+                throw new Exception("El tipo de aeropuerto introducido no es válido. (" + this.tipoAeropuerto + ")");
         }
         
         return tasas;

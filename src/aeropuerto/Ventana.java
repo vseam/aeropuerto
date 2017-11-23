@@ -163,7 +163,7 @@ public class Ventana extends javax.swing.JFrame {
             coordenadasAeropuerto.setText(aero.getCoordenadas().toString());
         } catch(Exception ex) {
             clearInputs();
-            System.out.println("Error en ejecución: " + ex);
+            System.out.println("ERROR: " + ex);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
